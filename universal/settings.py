@@ -26,6 +26,7 @@ ALLOWED_HOSTS = ['0.0.0.0','10.10.10.53','localhost']
 # Application definition
 INSTALLED_APPS = [
     'personal.apps.PersonalConfig',	
+    'rest_framework',    
     'django.contrib.gis',
     'django.contrib.admin',
     'django.contrib.auth',
