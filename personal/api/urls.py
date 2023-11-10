@@ -1,12 +1,11 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import PersonViewSet  # Importe suas viewsets aqui
+from .views import PersonViewSet, AddressViewSet
 
-# Criar um roteador e registrar suas viewsets
 router = DefaultRouter()
-router.register(r'people', PersonViewSet)
+router.register(r'persons', PersonViewSet)
+router.register(r'addresses', AddressViewSet, basename='address')
 
-# As URLs da API são determinadas automaticamente pelo roteador
 urlpatterns = [
     path('', include(router.urls)),
 ]

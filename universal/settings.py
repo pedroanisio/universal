@@ -25,8 +25,11 @@ ALLOWED_HOSTS = ['0.0.0.0','10.10.10.53','localhost']
 
 # Application definition
 INSTALLED_APPS = [
-    'personal.apps.PersonalConfig',	
-    'rest_framework',    
+    'corsheaders',
+    'personal.apps.PersonalConfig',
+    'mailbox.apps.MailboxConfig',
+    'rest_framework',
+    'drf_yasg',
     'django.contrib.gis',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +40,7 @@ INSTALLED_APPS = [
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware', # CORS
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -109,3 +113,5 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOW_ALL_ORIGINS = True
